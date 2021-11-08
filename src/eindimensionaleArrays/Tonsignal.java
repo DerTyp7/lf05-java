@@ -19,21 +19,17 @@ public class Tonsignal {
 
 
 
-        for(int c = 0; c < first.length; c++){
-            if(c == 0){
-                first[c] = (first[c+1] + first[c+2])/2;
-            }else if(c == first.length-1){
-                first[c] = (first[c-1] + first[c-2])/2;
-            }else{
-                first[c] = (first[c-1] + first[c+1])/2;
+        for(int c = 0; c < first.length; c++) {
+            if (c == 0) {
+                first[c] = (first[c + 1] + first[c + 2]) / 2;
+            } else if (c == first.length - 1) {
+                first[c] = (first[c - 1] + first[c - 2]) / 2;
+            } else {
+                first[c] = (first[c - 1] + first[c + 1]) / 2;
             }
-
 
 
             System.out.print(first[c] + " ");
         }
-
-
-
     }
 }
