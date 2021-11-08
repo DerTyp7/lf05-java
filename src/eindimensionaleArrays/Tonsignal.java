@@ -30,8 +30,7 @@ public class Tonsignal {
 
 
 
-
-            System.out.println(first[c]);
+            System.out.print(first[c] + " ");
         }
 
 
