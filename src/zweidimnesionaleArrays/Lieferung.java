@@ -35,7 +35,6 @@ public class Lieferung {
                 summen[i][a] = monat1[i][a] + monat2[i][a];
             }
         }
-
         return summen;
     }
 

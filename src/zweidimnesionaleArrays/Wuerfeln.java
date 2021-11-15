@@ -2,7 +2,6 @@ package zweidimnesionaleArrays;
 
 import java.io.IOException;
 
-
 public class Wuerfeln {
     public static void main(String[] args) throws IOException {
         int anzahlWuerfe = 10;
@@ -16,12 +15,12 @@ public class Wuerfeln {
         }
 
 
-
         for(int i = 0; i < anzahlExperimente; i++){
             for(int a = 0; a < anzahlWuerfe; a++){
                 System.out.print(wuerfe[i][a] +" ");
             }
             System.out.print("\n");
         }
+
     }
 }
