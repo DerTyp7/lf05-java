@@ -3,6 +3,11 @@ package zweidimnesionaleArrays;
 import java.io.IOException;
 
 public class Wuerfeln {
+
+    public static void ausgabeExperiment(){
+
+    }
+
     public static void main(String[] args) throws IOException {
         int anzahlWuerfe = 10;
         int anzahlExperimente = 4;
