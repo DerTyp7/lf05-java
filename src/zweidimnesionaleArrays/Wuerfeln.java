@@ -18,14 +18,11 @@ public class Wuerfeln {
                 wuerfe[i][a] = (int)(Math.random()*6)+1;
             }
         }
-
-
         for(int i = 0; i < anzahlExperimente; i++){
             for(int a = 0; a < anzahlWuerfe; a++){
                 System.out.print(wuerfe[i][a] +" ");
             }
             System.out.print("\n");
         }
-
     }
 }
