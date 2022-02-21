@@ -1,4 +1,4 @@
-package motorrad;
+package abstractClasses;
 
 public abstract class Vehicle {
 
