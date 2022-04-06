@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/nogard/schritt0/Bereich.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/nogard/schritt0/Spiel.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/nogard/schritt1/Bereich.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/nogard/schritt1/Spiel.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/nogard/schritt2/Bereich.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/nogard/schritt2/Spiel.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/nogard/schritt2/schritt1/Bereich.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/nogard/schritt2/schritt1/Spiel.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/nogard/schritt3/Bereich.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/nogard/schritt3/Bereich.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/nogard/schritt3/Spiel.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/nogard/schritt3/Spiel.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/nogard/schritt3/schritt3/Bereich.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/nogard/schritt3/schritt3/Spiel.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/nogard/schritt4/Bereich.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/nogard/schritt4/Bereich.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/nogard/schritt4/Spiel.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/nogard/schritt4/Spiel.java" charset="windows-1252" />
+  </component>
+</project>
