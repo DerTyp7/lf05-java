@@ -10,14 +10,15 @@
     <file url="file://$PROJECT_DIR$/src/nogard/schritt2/schritt1/Bereich.java" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/src/nogard/schritt2/schritt1/Spiel.java" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/src/nogard/schritt3/Bereich.java" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/nogard/schritt3/Bereich.java" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/nogard/schritt3/Spiel.java" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/src/nogard/schritt3/Spiel.java" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/src/nogard/schritt3/schritt3/Bereich.java" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/src/nogard/schritt3/schritt3/Spiel.java" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/src/nogard/schritt4/Bereich.java" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/nogard/schritt4/Bereich.java" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/src/nogard/schritt4/Spiel.java" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/nogard/schritt4/Spiel.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/nogard/schritt5/Befehl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/nogard/schritt5/BefehlFactory.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/nogard/schritt5/Gegenstand.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/nogard/schritt5/GegenstandNichtVorhandenException.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/nogard/schritt5/Spieler.java" charset="windows-1252" />
   </component>
 </project>

@@ -1,4 +1,4 @@
-package nogard.schritt5;
+package  nogard.schritt5b;
 
 public class Program {
 

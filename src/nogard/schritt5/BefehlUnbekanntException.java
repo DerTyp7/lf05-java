@@ -1,14 +1,26 @@
-package  nogard.schritt5;
+package nogard.schritt5;
 
+/**
+ * Die Exceptionklasse, die geworfen wird, wenn ein Befehl unbekannt ist.
+ */
 public class BefehlUnbekanntException extends Exception {
-    private String befehl;
+	
+	private String meldung;
+	
+	/**
+	 * Konstruktor.
+	 * @param meldung	Die Fehlermeldung.
+	 */
+	public BefehlUnbekanntException(String meldung) {
+		this.meldung = meldung;
+	}
 
-    public BefehlUnbekanntException(String befehl) {
-        this.befehl = befehl;
-    }
+	/* (non-Javadoc)
+	 * @see java.lang.Throwable#getMessage()
+	 */
+	@Override
+	public String getMessage() {
+		return meldung;
+	}
 
-    @Override
-    public String getMessage() {
-        return befehl;
-    }
 }

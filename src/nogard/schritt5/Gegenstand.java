@@ -1,32 +1,56 @@
 package nogard.schritt5;
 
+/**
+ * Diese Klasse modelliert einen Gegenstand.
+ */
 public class Gegenstand {
-    private String name;
-    private String description;
-    private float weight_kg;
+	
+	private String name;
+	private String beschreibung;
+	private double gewicht;
+	
+	/**
+	 * Konstruktor.
+	 * @param name			Der Name des Gegenstandes.
+	 * @param beschreibung	Die Beschreibung des Gegenstandes.
+	 * @param gewicht		Das Gewicht des Gegenstandes in kg.
+	 */
+	public Gegenstand(String name, String beschreibung, double gewicht) {
+		this.name = name;
+		this.beschreibung = beschreibung;
+		this.gewicht = gewicht;
+	}
 
-    public Gegenstand(String name, String description, float weight_kg) {
-        this.name = name;
-        this.description = description;
-        this.weight_kg = weight_kg;
-    }
+	/**
+     * Liefert den Namen des Gegenstandes.
+     * @return	Der Name des Gegenstandes.
+	 */
+	public String getName() {
+		return name;
+	}
 
-    public String getName() {
-        return name;
-    }
+    /**
+     * Liefert die Beschreibung des Gegenstandes.
+     * @return	Die Beschreibung des Gegenstandes.
+     */
+	public String getBeschreibung() {
+		return beschreibung;
+	}
 
-    public String getDescription() {
-        return description;
-    }
+	/**
+     * Liefert das Gewicht des Gegenstandes in kg.
+     * @return	Das Gewicht des Gegenstandes in kg.
+	 */
+	public double getGewicht() {
+		return gewicht;
+	}
+	
+	/**
+	 * Gibt die Informationen über den Gegenstand zurück.
+	 * @return	Die Informationen über den Gegenstand.
+	 */
+	public String getInfo() {
+		return name + " " + beschreibung + " mit einem Gewicht von " + gewicht + " kg";
+	}
 
-    public float getWeight_kg() {
-        return weight_kg;
-    }
-
-    public String getInfo() {
-        return "Name: " + name +
-                "\nBeschreibung: " + description +
-                "\nGewicht" + weight_kg +
-                "\n";
-    }
 }

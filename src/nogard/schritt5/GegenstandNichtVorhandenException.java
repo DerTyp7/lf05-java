@@ -1,20 +1,26 @@
-package  nogard.schritt5;
+package nogard.schritt5;
 
+/**
+ * Die Exceptionklasse, die geworfen wird, wenn ein Gegenstand nicht vorhanden ist.
+ */
 public class GegenstandNichtVorhandenException extends Exception {
-    private final String text;
-    public GegenstandNichtVorhandenException(Gegenstand g) {
-        StringBuilder sb = new StringBuilder();
-        sb.append(g.getInfo());
-        sb.append("Ist nicht in dem Bereich vorhanden.");
-        text = sb.toString();
-    }
+	
+	private String meldung;
+	
+	/**
+	 * Konstruktor.
+	 * @param meldung	Die Fehlermeldung.
+	 */
+	public GegenstandNichtVorhandenException(String meldung) {
+		this.meldung = meldung;
+	}
 
-    public GegenstandNichtVorhandenException(String text) {
-        this.text = text;
-    }
+	/* (non-Javadoc)
+	 * @see java.lang.Throwable#getMessage()
+	 */
+	@Override
+	public String getMessage() {
+		return meldung;
+	}
 
-    @Override
-    public String getMessage() {
-        return text;
-    }
 }

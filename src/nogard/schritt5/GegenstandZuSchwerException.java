@@ -1,9 +1,26 @@
-package  nogard.schritt5;
+package nogard.schritt5;
 
+/**
+ * Die Exceptionklasse, die geworfen wird, wenn ein Gegenstand nicht vorhanden ist.
+ */
 public class GegenstandZuSchwerException extends Exception {
-    private final String text;
+	
+	private Gegenstand gegenstand;
+	
+	/**
+	 * Konstruktor.
+	 * @param gegenstand	Der Gegenstand.
+	 */
+	public GegenstandZuSchwerException(Gegenstand gegenstand) {
+		this.gegenstand = gegenstand;
+	}
 
-    public GegenstandZuSchwerException(Gegenstand g) {
-        text = "Ist zu schwer: " + g.getDescription();
-    }
+	/* (non-Javadoc)
+	 * @see java.lang.Throwable#getMessage()
+	 */
+	@Override
+	public String getMessage() {
+		return "Der Gegenstand " + gegenstand.getName() + " ist zu schwer.";
+	}
+
 }

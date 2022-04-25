@@ -1,33 +1,34 @@
-package  nogard.schritt5;
+package nogard.schritt5;
 
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 
 /**
- * Diese Klasse modelliert Bereiche.Ein Bereich kann ein Gebiet, ein Haus, ein Raum etc. sein.
+ * Diese Klasse modelliert Bereiche. Ein Bereich kann ein Gebiet, ein Haus, ein Raum etc. sein.
  * 
- * Jeder Bereich ist mit anderen Bereichen ï¿½ber Ausgï¿½nge verbunden. Mï¿½gliche Ausgï¿½nge liegen im Norden, Osten, Sï¿½den und Westen.
+ * Jeder Bereich ist mit anderen Bereichen über Ausgänge verbunden. Mögliche Ausgänge liegen im Norden, Osten, Süden, Westen, oben und unten.
  * 
- * Fï¿½r jeden Ausgang hï¿½lt ein Bereich eine Referenz auf den benachbarten Bereich parat.
+ * Für jeden Ausgang hält ein Bereich eine Referenz auf den benachbarten Bereich parat.
  */
 public class Bereich {
+	
+    private String beschreibung;
+    private Map<Richtungen, Bereich> nachbarn;
+    private List<Gegenstand> gegenstaende; 
 
-	private final String beschreibung;
-	private final Map<Richtungen, Bereich> nachbarn;
-	private final LinkedList<Gegenstand> gegenstaende;
-	/**
+    /**
      * Konstruktor.
      * @param beschreibung	Die Beschreibung des Areals.
      */
     public Bereich(String beschreibung) {
         this.beschreibung = beschreibung;
         nachbarn = new HashMap<>();
-		gegenstaende = new LinkedList<>();
-
-		for (Richtungen r: Richtungen.values()) {
-			nachbarn.put(r, null);
+        for (Richtungen richtung : Richtungen.values()) {
+			nachbarn.put(richtung, null);
 		}
+        gegenstaende = new LinkedList<>();
     }
 
     /**
@@ -38,60 +39,82 @@ public class Bereich {
         return beschreibung;
     }
 
+    /**
+     * Liefert einen benachbarten Bereich.
+     * @param richtung	Die Richtung des gewünschten benachbarten Bereichs.
+     * @return			Der gewünschte benachbarte Bereich.
+     */
+    public Bereich getNachbar(Richtungen richtung) {
+    	return nachbarn.get(richtung);
+    }
+	
 	/**
-	 * Setzt den Nachbarn des Bereiches.
-	 * @param r Die Richtung / Ort des Nachbarbereichs.
-	 * @param n Der Nachbar welcher Relativ zu diesem Objekt liegt.
+	 * Gibt die Informationen über den Bereich zurück.
+	 * @return	Die Informationen über den Bereich.
 	 */
-	public void setNachbar(Richtungen r, Bereich n) {
-		nachbarn.put(r, n);
-	}
-
-	/**
-	 *
-	 * @param richtung Die Richtung in welcher ein Nachbar liegen kÃ¶nnte.
-	 * @return Den Nachbarn in der angegebenen Richtung, oder NULL wenn in der Richtung kein Bereich liegt.
-	 */
-	public Bereich getNachbar(Richtungen richtung) {
-		return nachbarn.get(richtung);
-	}
-
-	public void platziereGegenstand(Gegenstand g) {
-		gegenstaende.add(g);
-	}
-
-	public void entferneGegenstand(Gegenstand g) throws GegenstandNichtVorhandenException {
-		boolean success = gegenstaende.remove(g);
-		if (!success) {
-			throw new GegenstandNichtVorhandenException(g);
-		}
-	}
-
-	public Gegenstand sucheGegenstand(String name) throws GegenstandNichtVorhandenException {
-		for (Gegenstand g: gegenstaende) {
-			if (g.getName().equalsIgnoreCase(name)) {
-				return g;
-			}
-		}
-
-		throw new GegenstandNichtVorhandenException(name);
-	}
-
 	public String getInfo() {
-		StringBuilder sb = new StringBuilder();
-		sb.append("Du bist im Bereich ");
-		sb.append(getBeschreibung());
-		sb.append("\nDeine Nachbarn sind:\n");
-		for (Map.Entry<Richtungen, Bereich> paar: nachbarn.entrySet()) {
-			if (paar.getValue() != null) {
-				sb.append("\n\t").append(paar.getKey().name());
+		StringBuilder info = new StringBuilder();
+		info.append("\nDu befindest dich " + beschreibung + ".");
+		// Alle gegenstände ausgeben, wenn vorhanden.
+		if (gegenstaende.size() > 0) {
+			info.append("\nHier befinden sich die folgenden Gegenstände:");
+			for (Gegenstand gegenstand : gegenstaende) {
+				info.append("\n\t" + gegenstand.getInfo());
 			}
 		}
-		sb.append("\nGegenstÃ¤nde:\n");
-		for (Gegenstand g: gegenstaende) {
-			sb.append("\n\t").append(g.getInfo());
+        info.append("\nDu kannst gehen nach:");
+        // Alle nichtleeren Bereiche ausgeben.
+        for (Map.Entry<Richtungen, Bereich> paar : nachbarn.entrySet()) {
+			if (paar.getValue() != null) {
+				info.append("\n\t" + paar.getKey().name().toLowerCase());
+			}
 		}
-
-		return sb.toString();
+        return info.toString();
 	}
+    
+    /**
+     * Fügt einen benachbarten Bereich hinzu.
+     * Befindet sich bereits ein benachbarter Bereich an dieser Stelle, so wird er durch den neuen ersetzt.
+     * @param richtung	Die Richtung, in der sich der hinzuzufügende benachbarte Bereich befindet.
+     * @param nachbar	Der hinzuzufügende benachbarte Bereich.
+     */
+    public void setNachbar(Richtungen richtung, Bereich nachbar) {
+    	nachbarn.put(richtung, nachbar);
+    }
+
+    /**
+     * Fügt einen neuen Gegenstand dem Bereich hinzu.
+     * @param gegenstand	Der hinzuzufügende Gegenstand.
+     */
+	public void platzierenGegenstand(Gegenstand gegenstand) {
+		gegenstaende.add(gegenstand);
+	}
+	
+	/**
+	 * Entfernt einen Gegenstand aus dem Bereich.
+	 * @param nameGegenstand	Der zu entfernende Gegenstand.
+	 * @throws GegenstandNichtVorhandenException	Wird geworfen, wenn der zu entfernende Gegenstand nicht vorhanden ist.
+	 */
+	public void entfernenGegenstand(Gegenstand gegenstand) throws GegenstandNichtVorhandenException {
+		boolean entfernt = gegenstaende.remove(gegenstand);
+		if (entfernt == false) {
+			throw new GegenstandNichtVorhandenException("In diesem Bereich befindet sich leider kein Gegenstand mit dem Namen " + gegenstand.getName() + ".");
+		}
+	}
+	
+	/**
+	 * Sucht einen Gegenstand im Bereich.
+	 * @param nameGegenstand	Der Name des zu suchenden Gegenstandes.
+	 * @return					Der gesuchte Gegenstand.
+	 * @throws GegenstandNichtVorhandenException	Wird geworfen, wenn kein Gegenstand im Bereich den angegebenen Namen hat.
+	 */
+	public Gegenstand suchenGegenstand(String nameGegenstand) throws GegenstandNichtVorhandenException {
+		for (Gegenstand gegenstand : gegenstaende) {
+			if(gegenstand.getName().equalsIgnoreCase(nameGegenstand)) {
+				return gegenstand;
+			}
+		}
+		throw new GegenstandNichtVorhandenException("In diesem Bereich befindet sich leider kein Gegenstand mit dem Namen " + nameGegenstand + ".");
+	}
+
 }
