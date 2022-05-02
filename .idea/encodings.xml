@@ -20,5 +20,11 @@
     <file url="file://$PROJECT_DIR$/src/nogard/schritt5/Gegenstand.java" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/src/nogard/schritt5/GegenstandNichtVorhandenException.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/nogard/schritt5/Spieler.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/nogard/schritt6b/BefehlFactory.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/nogard/schritt6b/BefehlFactory.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/nogard/schritt6b/Gegenstand.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/nogard/schritt6b/Gegenstand.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/nogard/schritt6b/Spieler.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/nogard/schritt6b/Spieler.java" charset="windows-1252" />
   </component>
 </project>
