@@ -1,7 +1,5 @@
 package  nogard.schritt5b;
 
-import java.util.Arrays;
-
 public class BefehlFactory {
 
     public static Befehl createBefehl(String input) throws BefehlUnbekanntException {
