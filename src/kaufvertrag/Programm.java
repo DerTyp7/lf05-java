@@ -1,6 +1,8 @@
 package kaufvertrag;
 
+import java.io.BufferedReader;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.PrintWriter;
 
 public class Programm {
@@ -15,5 +17,27 @@ public class Programm {
         writer.println(k.toString());
         writer.close();
 
+        readCSV();
+    }
+
+    public static void readCSV() throws FileNotFoundException {
+        String datei = "src/kaufvertrag/Vertrag.csv";
+        BufferedReader reader = new BufferedReader(new FileReader(datei));
+
+        String zeile;
+        try {
+            while ((zeile = reader.readLine()) != null) {
+                System.out.println(zeile);
+
+            }
+        } catch (Exception e) {
+            System.out.println("Fehler beim Lesen der Datei");
+        }
+
+        try {
+            reader.close();
+        } catch (Exception e) {
+            System.out.println("Fehler beim Schließen der Datei");
+        }
     }
 }
